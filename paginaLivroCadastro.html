@@ -36,7 +36,7 @@
             <!--NAVBAR-->
             <nav class="navbar navbar-expand-lg py-4">
                 <div class="container">
-                    <!-- menu a esquerda -->
+                    <!-- Menu a esquerda -->
                     <button class="navbar-toggler mb-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     >
                         <span class="navbar-toggler-icon"></span>
@@ -45,7 +45,7 @@
                     <!-- Logo da biblioteca -->
                     <span class="navbar-brand mx-auto d-flex gap-3 align-items-center" href="#">
                         <img src="images/logo.png" alt="" width="50px"> 
-                        <span class="h2 fw-bold">Vereda</span> <!-- Marrom Escuro -->
+                        <span class="h2 fw-bold">Vereda</span> 
                     </span>
                     
                     <!-- Menu de navegação -->
@@ -58,13 +58,9 @@
                                 </a>
                                 <ul class="dropdown-menu p-3">
                                     <li><a class="dropdown-item primary-color nav-link" href="paginaConsulta.html">Consulta de livros</a></li>
-                                    <li><a class="dropdown-item primary-color nav-link" href="#">Devolução de livros</a></li>
+                                    <li><a class="dropdown-item primary-color nav-link" href="paginaDevolucao.html">Devolução de livros</a></li>
                                     <li><a class="dropdown-item primary-color nav-link" href="#">Empréstimo de livros</a></li>
                                     <li><a class="dropdown-item primary-color nav-link" href="paginaReserva.html">Reserva de livros</a></li>
-                                    <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item primary-color nav-link" href="#">Cadastro de livros</a></li>
-                                    <li><a class="dropdown-item primary-color nav-link" href="#">Relatórios</a></li>
-                                </ul>
                             </li>
 
                             <!-- Dropdown para o ícone de perfil -->
@@ -73,7 +69,8 @@
                                     <i class="fas fa-user"></i> Perfil
                                 </a>
                                 <ul class="dropdown-menu p-3" aria-labelledby="profileDropdown">
-                                    <li><a class="dropdown-item nav-link" href="#">Minha Conta</a></li>
+                                    <li><a class="dropdown-item primary-color nav-link" href="paginaLivroCadastro.html">Cadastro de livros</a></li>
+                                    <li><a class="dropdown-item primary-color nav-link" href="paginaRelatorios.html">Relatórios</a></li>
                                     <li><hr class="dropdown-divider"></li>
                                     <li><a class="dropdown-item nav-link" href="paginaLogin.html"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
                                 </ul>
@@ -84,64 +81,74 @@
             </nav>
         </header>
 
-    <main>
-        <section id="cadastro-livros"  class="container-md mx-auto">
-            <div>
-            <h2 class="title">Cadastrar Livro</h2>
-            <p class="subtitle ">
-                Adicione novos livros ao acervo da biblioteca.
-            </p>
-            </div>
-            <form>
-                <!-- Campo para o título do livro -->
-                <div class="mb-3">
-                    <label for="tituloLivro" class="form-label">Título do Livro</label>
-                    <input type="text" class="form-control" id="tituloLivro" placeholder="Digite o título do livro" required>
+        <main>
+            <section id="cadastro-livros"  class="container-md mx-auto">
+                <div>
+                <h2 class="title">Cadastrar Livro</h2>
+                    <p class="subtitle ">
+                        Adicione novos livros ao acervo da biblioteca.
+                    </p>
                 </div>
-    
-                <!-- Campo para o nome do autor -->
-                <div class="mb-3">
-                    <label for="nomeAutor" class="form-label">Nome do Autor</label>
-                    <input type="text" class="form-control" id="nomeAutor" placeholder="Digite o nome do autor" required>
-                </div>
-    
-                <!-- Campo para upload da imagem do livro -->
-                <div class="mb-3">
-                    <label for="imagemLivro" class="form-label">Imagem do Livro</label>
-                    <input type="file" class="form-control" id="imagemLivro">
-                </div>
-    
+                <form>
+                    <!-- Campo para o título do livro -->
+                    <div class="mb-3">
+                        <label for="tituloLivro" class="form-label">Título do Livro</label>
+                        <input type="text" class="form-control" id="tituloLivro" placeholder="Digite o título do livro" required>
+                    </div>
+        
+                    <!-- Campo para o nome do autor -->
+                    <div class="mb-3">
+                        <label for="nomeAutor" class="form-label">Nome do Autor</label>
+                        <input type="text" class="form-control" id="nomeAutor" placeholder="Digite o nome do autor" required>
+                    </div>
+        
+                    <!-- Campo para upload da imagem do livro -->
+                    <div class="mb-3">
+                        <label for="imagemLivro" class="form-label">Imagem do Livro</label>
+                        <input type="file" class="form-control" id="imagemLivro">
+                    </div>
+        
 
-                <div class="mb-3">
-                    <label for="anoPublicacao" class="form-label">Ano de Publicação</label>
-                    <input type="number" class="form-control" id="anoPublicacao" placeholder="Digite o ano de publicação" required>
-                </div>
-    
-                <div class="mb-3">
-                    <label for="tagAssunto" class="form-label">Tag do Tipo de Assunto</label>
-                    <select class="form-select" id="tagAssunto" required>
-                        <option selected disabled value="">Escolha uma tag...</option>
-                        <option value="ficcao">Ficção</option>
-                        <option value="nao-ficcao">Não Ficção</option>
-                        <option value="biografia">Biografia</option>
-                        <option value="tecnologia">Tecnologia</option>
-                        <option value="historia">História</option>
-                        <option value="autoajuda">Autoajuda</option>
-                    </select>
-                </div>
-    
-                <!-- Campo adicional para uma breve descrição -->
-                <div class="mb-3">
-                    <label for="descricaoLivro" class="form-label">Descrição do Livro</label>
-                    <textarea class="form-control" id="descricaoLivro" rows="3" placeholder="Digite uma breve descrição do livro"></textarea>
-                </div>
-    
-                <!-- Botão de submit -->
-                <button type="submit" class="btn btn-outline-warning">Cadastrar Livro</button>
-            </form>
-        </section>
+                    <div class="mb-3">
+                        <label for="anoPublicacao" class="form-label">Ano de Publicação</label>
+                        <input type="number" class="form-control" id="anoPublicacao" placeholder="Digite o ano de publicação" required>
+                    </div>
+        
+                    <div class="mb-3">
+                        <label for="tagAssunto" class="form-label">Categoria do livro</label>
+                        <select class="form-select" id="tagAssunto" required>
+                            <option selected disabled value="">Escolha uma categoria</option>
+                            <option value="aventura">Aventura</option>
+                                <option value="biografia">Biografia</option>
+                                <option value="ficcao">Científico</option>
+                                <option value="historia">Comédia</option>
+                                <option value="tecnico">Documentário</option>
+                                <option value="aventura">Dramas</option>
+                                <option value="biografia">Esportes</option>
+                                <option value="fantasia">Fantasia</option>
+                                <option value="ficcao">Ficção</option>                                    
+                                <option value="historia">História</option>
+                                <option value="litClassica">Literatura Clássica</option>
+                                <option value="ficcao">Mangá</option>
+                                <option value="romance">Romance</option>                                    
+                                <option value="suspense">Suspense</option>
+                                <option value="tecnico">Técnico</option>
+                                <option value="terror">Terror</option>   
+                        </select>
+                    </div>
+        
+                    <!-- Campo adicional para uma breve descrição -->
+                    <div class="mb-3">
+                        <label for="descricaoLivro" class="form-label">Descrição do Livro</label>
+                        <textarea class="form-control" id="descricaoLivro" rows="3" placeholder="Digite uma breve descrição do livro"></textarea>
+                    </div>
+        
+                    <!-- Botão de submit -->
+                    <button type="submit" class="btn btn-outline-warning">Cadastrar Livro</button>
+                </form>
+            </section>
 
-    </main>
+        </main>
 
         <!-- Rodapé -->
         <footer class="container-fluid text-white" id="footer">

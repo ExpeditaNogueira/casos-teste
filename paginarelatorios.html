@@ -28,7 +28,7 @@
             crossorigin="anonymous">
         
         <!-- CSS -->
-        <link rel="stylesheet" href="css/styleCadastro.css">
+        <link rel="stylesheet" href="css/styleRelatorio.css">
     </head>
     <body>
         <!-- Cabeçalho da página com barra de navegação -->
@@ -56,19 +56,23 @@
                                 </a>
                                 <ul class="dropdown-menu p-3">
                                     <li><a class="dropdown-item primary-color nav-link" href="paginaConsulta.html">Consulta de livros</a></li>
-                                    <li><a class="dropdown-item primary-color nav-link" href="#">Devolução de livros</a></li>
+                                    <li><a class="dropdown-item primary-color nav-link" href="paginaDevolucao.html">Devolução de livros</a></li>
                                     <li><a class="dropdown-item primary-color nav-link" href="#">Empréstimo de livros</a></li>
                                     <li><a class="dropdown-item primary-color nav-link" href="paginaReserva.html">Reserva de livros</a></li>
-                                    <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item primary-color nav-link" href="#">Cadastro de livros</a></li>
-                                    <li><a class="dropdown-item primary-color nav-link" href="paginarelatorios.html"></a></li>
                                 </ul>
                             </li>
 
-                            <li class="nav-item">
-                                <a class="nav-link me-2" href="paginaLogin.html">
-                                    <i class="fas fa-user"></i> Login
+                            <!-- Dropdown para o ícone de perfil -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> <!-- Marrom Escuro -->
+                                <i class="fas fa-user"></i> Perfil
                                 </a>
+                                <ul class="dropdown-menu p-3" aria-labelledby="profileDropdown">                                    
+                                    <li><a class="dropdown-item primary-color nav-link" href="paginaLivroCadastro.html">Cadastro de livros</a></li>
+                                    <li><a class="dropdown-item primary-color nav-link" href="paginaRelatorios.html">Relatórios</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item nav-link" href="paginaLogin.html"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
+                                </ul>
                             </li>
                         </ul>
                     </div>
@@ -80,120 +84,141 @@
         <main class="pt-5 mt-4">
             <article>
                 <section>
-                    <!-- Formulário de cadastro -->
-                    <div class="container py-4 my-5">
-                        <form class="container col-sm-10 col-md-7 col-lg-12 input-group-lg">  
-                            <div>
-                                <table class="table table-striped">
-                                    <thead>
+                    <!-- Relatório -->
+                    <div class="container py-4 my-5">  
+                            <div class="col-sm-10 col-md-7 col-lg-12">
+                                <div class="h1">
+                                    <p>Relatórios</p>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-bottom mb-2">                                    
+                                    <h4>Relatórios de Livros mais emprestados</h4> 
+                                    <button class="btn btn-outline-warning" >Ver Mais</button>                                                                    
+                                </div>
+                                <table class="table table-hover">
+                                    <thead>                                        
                                         <tr>
-                                            <th scope="col" ><h3>Relatórios de Livros mais emprestados <button class="btn btn-primary" id="verMaisBtn" onclick="mostrarRelatorio()">Ver Mais</button></h3></th>
+                                            <td class="table-bg table-left text-white">Livros</td>
+                                            <td align="center" class="td1 table-bg text-white table-right">Avaliações</td>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody>                                        
                                         <tr>
-                                            <td>Livros</td>
-                                            <td align="center">Avaliações</td>
+                                            <td >1 Harry Potter, de J. K. Rowlin</td>
+                                            <td align="center" class="td1">4.91</td>
                                         </tr>
                                         <tr>
-                                            <th scope="row">1 Harry Potter, de J. K. Rowlin</th>
-                                            <td align="center">4.91</td>
+                                            <td>2 O Senhor dos Anéis, de J. R. R. Tolkien</td>
+                                            <td align="center" class="td1">4.85</td>
                                         </tr>
                                         <tr>
-                                            <th scope="row">2 O Senhor dos Anéis, de J. R. R. Tolkien</th>
-                                            <td align="center">4.85</td>
+                                            <td>3 O Alquimista, de Paulo Coelho</td>
+                                            <td align="center" class="td1">4.79</td>
                                         </tr>
                                         <tr>
-                                            <th scope="row">3 O Alquimista, de Paulo Coelho</th>
-                                            <td align="center">4.79</td>
+                                            <td>4 O Código da Vinci, de Dan Brown</td>
+                                            <td align="center" class="td1">4.66</td>
                                         </tr>
                                         <tr>
-                                            <th scope="row">4 O Código da Vinci, de Dan Brown</th>
-                                            <td align="center">4.66</td>
-                                        </tr>
+                                            <td> É Assim Que Acaba</td>
+                                            <td align="center" class="td1">4.50</td>
+                                        </tr> 
                                         <tr>
-                                            <th scope="row"> É Assim Que Acaba</th>
-                                            <td align="center">4.50</td>
+                                            <th class="table-bg table-bottom-left"></th>
+                                            <th class="table-bg table-bottom-right"></th>
                                         </tr>                                       
                                     </tbody>
                                 </table><br><br>
                             </div>
-                            <div> 
+                            <div>
+                                <div class="d-flex justify-content-between align-items-bottom mb-2">                                    
+                                    <h4>Usuários Com Mais Empréstimos</h4> 
+                                    <button class="btn btn-outline-warning" >Ver Mais</button>                                                                    
+                                </div> 
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th scope="col"><h3>Usuários Com Mais Empréstimos <button class="btn btn-primary" id="verMaisBtn" onclick="mostrarRelatorio()">Ver Mais</button></h3></th>
+                                            <td class="table-bg table-left text-white">Usuários</td>
+                                            <td align="center" class="td1 table-bg text-white table-right">Quantidade Emprestados</td>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody>                                        
                                         <tr>
-                                            <td>Usuários</td>
-                                            <td align="center">Quantidade Emprestados</td>
+                                            <td>Evelyn Duarte</td>
+                                            <td align="center" class="td1">5</td>
                                         </tr>
                                         <tr>
-                                            <th scope="row">Evelyn Duarte</th>
-                                            <td align="center">5</td>
+                                            <td>Evelyn Duarte</td>
+                                            <td align="center" class="td1">5</td>
                                         </tr>
                                         <tr>
-                                            <th scope="row">Evelyn Duarte</th>
-                                            <td align="center">5</td>
+                                            <td>Evelyn Duarte</td>
+                                            <td align="center" class="td1">3</td>
                                         </tr>
                                         <tr>
-                                            <th scope="row">Evelyn Duarte</th>
-                                            <td align="center">3</td>
+                                            <td>Evelyn Duarte</td>
+                                            <td align="center" class="td1">2</td>
                                         </tr>
                                         <tr>
-                                            <th scope="row">Evelyn Duarte</th>
-                                            <td align="center">2</td>
+                                            <td>Evelyn Duarte</td>
+                                            <td align="center" class="td1">1</td>
                                         </tr>
                                         <tr>
-                                            <th scope="row">Evelyn Duarte</th>
-                                            <td align="center">1</td>
-                                        </tr>                   
+                                            <th class="table-bg table-bottom-left"></th>
+                                            <th class="table-bg table-bottom-right"></th>
+                                        </tr>                    
                                     </tbody>
                                 </table><br><br>
-
+                                
+                                <div class="d-flex justify-content-between align-items-bottom mb-2">                                    
+                                    <h4>Livros em Atraso</h4> 
+                                    <button class="btn btn-outline-warning" >Ver Mais</button>                                                                    
+                                </div> 
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th scope="col"><h3>Livros em Atraso <button class="btn btn-outline-warning" id="verMaisBtn" >Ver Mais</button></h3></th>
+                                            <td class="table-bg table-left text-white">Usuários</td>
+                                            <td class="table-bg text-white">Livros</td>
+                                            <td align="center" class="table-bg text-white table-right">Dias de Atraso</td>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody>                                        
                                         <tr>
-                                            <td>Usuários</td>
-                                            <td>Livros</td>
-                                            <td align="center">Dias de Atraso</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">Evelyn Duarte</th>
+                                            <td>Evelyn Duarte</td>
                                             <td>O Pequeno Príncipe</td>
                                             <td align="center">19</td>
                                         </tr>
                                         <tr>
-                                            <th scope="row">Evelyn Duarte</th>
+                                            <td>Evelyn Duarte</td>
                                             <td>A Culpa é das Estrelas</td>
                                             <td align="center">18</td>
                                         </tr>
                                         <tr>
-                                            <th scope="row">Evelyn Duarte</th>
+                                            <td>Evelyn Duarte</td>
                                             <td>Diário de um Banana</td>
                                             <td align="center">16</td>
-                                        </tr>
+                                    </tr>
                                         <tr>
-                                            <th scope="row">Evelyn Duarte</th>
-                                            <td>Harry Potter</td>
-                                            <td align="center">15</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">Evelyn Duarte</th>
+                                        <td>Evelyn Duarte</td>
+                                        <td>Harry Potter</td>
+                                        <td align="center">15</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Evelyn Duarte</td>
                                             <td>A Cabana</td>
-                                            <td align="center">15</td>
-                                        </tr>                   
-                                    </tbody>
-                                </table><br><br>
-                            </div>
-                        </form>
+                                        <td align="center">15</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="table-bg table-bottom-left"></th>
+                                        <td class="table-bg"></td>
+                                        <th class="table-bg table-bottom-right"></th>
+                                    </tr>                     
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                            <span>Imprima o relatório semanal:</span>
+                            <button class="btn btn-outline-warning">Imprimir</button>
+                        </div>
                     </div>
                 </section>
             </article>
